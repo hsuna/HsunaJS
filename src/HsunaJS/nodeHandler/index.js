@@ -1,5 +1,9 @@
-import { Signal } from '../signal'
-import { MemberValue } from '../value'
+import {
+    Signal
+} from '../signal'
+import {
+    MemberValue
+} from '../value'
 
 const NodeHandler = {
     Program(nodeIterator) {
@@ -15,7 +19,7 @@ const NodeHandler = {
             } = declaration.id
             const value = declaration.init ? nodeIterator.traverse(declaration.init) : undefined
             // 在作用域当中定义变量
-            if (nodeIterator.scope.type === 'block' && kind === 'var') {
+            if (nodeIterator.scope.type === 'block' && kind !== 'var') {
                 nodeIterator.scope.parentScope.declare(name, value, kind)
             } else {
                 nodeIterator.scope.declare(name, value, kind)
@@ -44,6 +48,13 @@ const NodeHandler = {
             value = nodeIterator.traverse(nodeIterator.node.callee.object)
         }
         return func.apply(value, args)
+    },
+    SequenceExpression(nodeIterator) {
+        let result;
+        for (const expression of nodeIterator.node.expressions) {
+            result = nodeIterator.traverse(expression)
+        }
+        return result;
     },
     MemberExpression(nodeIterator) {
         const obj = nodeIterator.traverse(nodeIterator.node.object)

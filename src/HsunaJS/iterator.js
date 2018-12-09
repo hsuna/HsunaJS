@@ -5,7 +5,7 @@ import {
 import nodeHandler from './nodeHandler'
 
 class NodeIterator {
-    constructor(node) {
+    constructor(node, scope) {
         this.node = node
         this.scope = scope
         this.nodeHandler = nodeHandler

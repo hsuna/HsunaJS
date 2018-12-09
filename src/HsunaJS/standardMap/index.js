@@ -1,6 +1,6 @@
 import {
     SimpleValue
-} from './value'
+} from '../value'
 
 let windowObj = null
 let globalObj = null

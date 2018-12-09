@@ -2,7 +2,7 @@ import { Parser } from 'acorn'
 import { NodeIterator } from './iterator'
 import { Scope } from './scope'
 
-export default class HsunaJs {
+module.exports = class HsunaJS {
     constructor(code = '', extraDeclaration = {}) {
         this.code = code
         this.extraDeclaration = extraDeclaration
