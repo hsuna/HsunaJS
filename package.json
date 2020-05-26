@@ -4,10 +4,9 @@
   "description": "HsunaJs is a javascript interpreter, which can run JS code in JS.",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --hide-modules",
-    "preview": "pushstate-server ./dist 2333",
-    "preview:dev": "pushstate-server ./dev 80",
-    "prettier": "prettier --write --print-width 100 --tab-width 2 --no-semi \"**/*.js\" \"**/*.jsx\" \"**/*.tsx\" \"**/*.ts\""
+    "test": "node ./test/start.js",
+    "build": "rollup --config build/rollup.config.js",
+    "prettier": "prettier --write --print-width 100 --tab-width 2 --no-semi \"src/**/*.js\""
   },
   "repository": {
     "type": "git",
@@ -20,37 +19,21 @@
   },
   "homepage": "https://github.com/hsuna/js-interpreter#readme",
   "devDependencies": {
-    "autoprefixer": "^6.7.7",
-    "babel-core": "^6.22.1",
-    "babel-loader": "^6.2.10",
-    "babel-plugin-transform-decorators-legacy": "^1.3.4",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-transform-runtime": "^6.22.0",
-    "babel-preset-env": "^1.2.1",
-    "babel-preset-es2015": "6.6.0",
-    "babel-preset-stage-0": "^6.24.1",
-    "babel-register": "^6.22.0",
-    "babel-runtime": "^6.3.13",
-    "crypto-js": "^3.1.9-1",
-    "css-loader": "^0.28.0",
-    "file-loader": "^1.1.6",
-    "friendly-errors-webpack-plugin": "^1.6.1",
-    "less": "^2.3.1",
-    "less-loader": "^2.2.3",
-    "node-sass": "^3.4.2",
-    "postcss-loader": "^1.3.3",
-    "prettier": "^1.9.2",
-    "pushstate-server": "^3.0.1",
-    "sass-loader": "^3.1.2",
-    "style-loader": "^0.13.0",
-    "url-loader": "^0.6.2",
-    "webpack": "^2.2.1",
-    "webpack-merge": "^2.6.1"
+    "@babel/core": "7.6.4",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "7.6.3",
+    "@babel/register": "^7.9.0",
+    "@babel/runtime": "^7.9.2",
+    "@rollup/plugin-commonjs": "^12.0.0",
+    "@rollup/plugin-replace": "^2.3.2",
+    "prettier": "^2.0.5",
+    "rollup": "^2.7.3",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.3.0"
   },
   "dependencies": {
-    "acorn": "^6.0.4",
-    "babel-polyfill": "^6.26.0",
-    "better-scroll": "^1.8.0",
-    "es6-promise-polyfill": "^1.2.0"
+    "acorn": "^7.2.0",
+    "core-js": "^3.6.5"
   }
 }
