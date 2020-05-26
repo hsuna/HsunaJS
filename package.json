@@ -1,5 +1,5 @@
 {
-  "name": "js-interpreter",
+  "name": "HsunaJS",
   "version": "1.0.0",
   "description": "HsunaJs is a javascript interpreter, which can run JS code in JS.",
   "main": "index.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hsuna/js-interpreter.git"
+    "url": "git+https://github.com/hsuna/HsunaJS.git"
   },
   "author": "Hsuna",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hsuna/js-interpreter/issues"
+    "url": "https://github.com/hsuna/HsunaJS/issues"
   },
-  "homepage": "https://github.com/hsuna/js-interpreter#readme",
+  "homepage": "https://github.com/hsuna/HsunaJS#readme",
   "devDependencies": {
     "@babel/core": "7.6.4",
     "@babel/plugin-transform-runtime": "^7.9.0",
