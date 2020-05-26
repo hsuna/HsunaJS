@@ -1,7 +1,14 @@
 {
-  "presets": ["es2015", "stage-0"],
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "corejs": 3
+      }
+    ]
+  ],
   "plugins": [
-    "transform-runtime",
-    "transform-object-rest-spread"
+    "@babel/plugin-transform-runtime"
   ]
 }
